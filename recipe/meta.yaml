@@ -11,7 +11,7 @@ source:
   md5: b5f1a9f6093869c070c6e4a9450cc10c
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 requirements:
@@ -19,6 +19,9 @@ requirements:
     - libtool
     - autoconf
     - automake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
   run:
 
 test:
