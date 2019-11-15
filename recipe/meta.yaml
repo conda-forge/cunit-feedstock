@@ -6,13 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  fn: CUnit-{{ version }}.tar.gz
-  url: https://sourceforge.net/projects/cunit/files/CUnit/{{ version_url }}/CUnit-{{ version_url }}.tar.bz2
-  md5: b5f1a9f6093869c070c6e4a9450cc10c
+  - url: https://sourceforge.net/projects/cunit/files/CUnit/{{ version_url }}/CUnit-{{ version_url }}.tar.bz2
+    md5: b5f1a9f6093869c070c6e4a9450cc10c
+  - path: CMakeLists.txt  # [win]
 
 build:
-  number: 1001
-  skip: True  # [win]
+  number: 1002
 
 requirements:
   build:
@@ -38,3 +37,4 @@ about:
 extra:
     recipe-maintainers:
       - grlee77
+      - wolfv
