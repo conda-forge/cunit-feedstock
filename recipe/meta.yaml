@@ -29,6 +29,9 @@ test:
     - test -f ${PREFIX}/lib/libcunit.a  # [unix]
     - test -f ${PREFIX}/lib/libcunit.so  # [linux]
     - test -f ${PREFIX}/lib/libcunit.dylib  # [osx]
+    - if exist %LIBRARY_INC%\\cunit\\Automated.h (exit 0) else (exit 1)  # [win]
+    - if exist %LIBRARY_INC%\\cunit\\cUnit.h (exit 0) else (exit 1)  # [win]
+    - if exist %LIBRARY_LIB%\\libcunit.lib (exit 0) else (exit 1)  # [win]
 
 about:
   home: http://sourceforge.net/projects/cunit/
