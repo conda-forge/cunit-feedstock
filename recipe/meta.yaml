@@ -19,6 +19,7 @@ requirements:
     - libtool
     - autoconf
     - automake
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
@@ -33,9 +34,11 @@ test:
 
 about:
   home: http://sourceforge.net/projects/cunit/
-  license: LGPL v2
+  license: LGPL-2.0-only
+  license_file: COPYING
   summary: A Unit Testing Framework for C
 
 extra:
-    recipe-maintainers:
-      - grlee77
+  recipe-maintainers:
+    - grlee77
+    - wolfv
