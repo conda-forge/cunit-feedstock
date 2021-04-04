@@ -19,6 +19,7 @@ requirements:
     - libtool
     - autoconf
     - automake
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
