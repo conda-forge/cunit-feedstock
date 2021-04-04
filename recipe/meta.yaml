@@ -34,7 +34,7 @@ test:
 
 about:
   home: http://sourceforge.net/projects/cunit/
-  license: LGPL-2.0
+  license: LGPL-2.0-only
   license_file: COPYING
   summary: A Unit Testing Framework for C
 
