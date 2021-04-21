@@ -67,12 +67,12 @@ install(
     GROUP_READ GROUP_WRITE
     WORLD_READ)
 
-install(
-  FILES
-    $<TARGET_PDB_FILE:cunit>
-  DESTINATION
-    bin
-  OPTIONAL)
+# install(
+#   FILES
+#     $<TARGET_PDB_FILE:cunit>
+#   DESTINATION
+#     bin
+#   OPTIONAL)
 
 install(
   FILES
