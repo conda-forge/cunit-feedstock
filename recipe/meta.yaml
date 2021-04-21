@@ -31,8 +31,8 @@ test:
     - test -f ${PREFIX}/lib/libcunit${SHLIB_EXT}              # [unix]
     - if not exist %LIBRARY_INC%\cunit\Automated.h (exit 1)   # [win]
     - if not exist %LIBRARY_INC%\cunit\cUnit.h (exit 1)       # [win]
-    - if not exist %LIBRARY_LIB%\libcunit.lib (exit 1)        # [win]
-    - if not exist %LIBRARY_BIN%\libcunit.dll (exit 1)        # [win]
+    - if not exist %LIBRARY_LIB%\cunit.lib (exit 1)        # [win]
+    - if not exist %LIBRARY_BIN%\cunit.dll (exit 1)        # [win]
 
 about:
   home: http://sourceforge.net/projects/cunit/
