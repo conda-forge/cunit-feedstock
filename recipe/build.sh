@@ -5,7 +5,9 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 ./bootstrap $PREFIX
 
 make
+
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-make check
+    make check
 fi
+
 make install

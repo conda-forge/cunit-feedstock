@@ -3,7 +3,7 @@ About cunit
 
 Home: http://sourceforge.net/projects/cunit/
 
-Package license: LGPL v2
+Package license: LGPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cunit-feedstock/blob/master/LICENSE.txt)
 
@@ -75,6 +75,13 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cunit-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=201&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cunit-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -97,6 +104,7 @@ Installing `cunit` from the `conda-forge` channel can be achieved by adding `con
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `cunit` can be installed with:
@@ -176,4 +184,5 @@ Feedstock Maintainers
 =====================
 
 * [@grlee77](https://github.com/grlee77/)
+* [@wolfv](https://github.com/wolfv/)
 
