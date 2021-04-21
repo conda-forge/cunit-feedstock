@@ -23,16 +23,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
-  host:
-  run:
+    - ninja  # [win]
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libcunit.a                                   # [unix]
-    - test -f ${PREFIX}/lib/libcunit${SHLIB_EXT}                         # [unix]
-    - if exist %LIBRARY_INC%\\cunit\\Automated.h (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_INC%\\cunit\\cUnit.h (exit 0) else (exit 1)      # [win]
-    - if exist %LIBRARY_LIB%\\libcunit.lib (exit 0) else (exit 1)        # [win]
+    - test -f ${PREFIX}/lib/libcunit.a                        # [unix]
+    - test -f ${PREFIX}/lib/libcunit${SHLIB_EXT}              # [unix]
+    - if not exist %LIBRARY_INC%\cunit\Automated.h (exit 1)   # [win]
+    - if not exist %LIBRARY_INC%\cunit\cUnit.h (exit 1)       # [win]
+    - if not exist %LIBRARY_LIB%\libcunit.lib (exit 1)        # [win]
+    - if not exist %LIBRARY_BIN%\libcunit.dll (exit 1)        # [win]
 
 about:
   home: http://sourceforge.net/projects/cunit/
