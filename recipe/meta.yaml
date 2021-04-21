@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  fn: CUnit-{{ version }}.tar.gz
-  url: https://sourceforge.net/projects/cunit/files/CUnit/{{ version_url }}/CUnit-{{ version_url }}.tar.bz2
-  md5: b5f1a9f6093869c070c6e4a9450cc10c
+  - url: https://sourceforge.net/projects/cunit/files/CUnit/{{ version_url }}/CUnit-{{ version_url }}.tar.bz2
+    md5: b5f1a9f6093869c070c6e4a9450cc10c
+  - path: CMakeLists.txt  # [win]
 
 build:
-  number: 1001
-  skip: True  # [win]
+  number: 1002
 
 requirements:
   build:
-    - libtool
-    - autoconf
-    - automake
-    - gnuconfig  # [unix]
+    - libtool     # [unix]
+    - autoconf    # [unix]
+    - automake    # [unix]
+    - gnuconfig   # [unix]
+    - cmake       # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
@@ -28,9 +28,11 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libcunit.a
-    - test -f ${PREFIX}/lib/libcunit.so  # [linux]
-    - test -f ${PREFIX}/lib/libcunit.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libcunit.a                                   # [unix]
+    - test -f ${PREFIX}/lib/libcunit${SHLIB_EXT}                         # [unix]
+    - if exist %LIBRARY_INC%\\cunit\\Automated.h (exit 0) else (exit 1)  # [win]
+    - if exist %LIBRARY_INC%\\cunit\\cUnit.h (exit 0) else (exit 1)      # [win]
+    - if exist %LIBRARY_LIB%\\libcunit.lib (exit 0) else (exit 1)        # [win]
 
 about:
   home: http://sourceforge.net/projects/cunit/
